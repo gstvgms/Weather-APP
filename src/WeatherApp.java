@@ -21,7 +21,7 @@ public class WeatherApp {
     }
 
     // retrieves geographic coordinates for a given location
-    private static JSONArray getLocationData(String location) {
+    public static JSONArray getLocationData(String location) {
         // replace any whitespace with a plus sign
         location = location.replaceAll(" ", "+");
 
@@ -66,6 +66,8 @@ public class WeatherApp {
         }catch(Exception e) {
             e.printStackTrace();
         }
+
+        return null;
     }
 
     private static HttpURLConnection fetchApiResponse(String urlString) {
