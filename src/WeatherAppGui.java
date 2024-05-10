@@ -8,9 +8,13 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class WeatherAppGui extends JFrame {
     private JSONObject weatherData;
+    private JTextField searchTextField;
 
     public WeatherAppGui() {
         // setup our gui and add a tittle
@@ -38,7 +42,7 @@ public class WeatherAppGui extends JFrame {
 
     private void addGuiComponents() {
         // search bar
-        JTextField searchTextField = new JTextField();
+        searchTextField = new JTextField();
 
         // set the location and size of the search bar
         searchTextField.setBounds(15, 15, 351, 45);
@@ -47,6 +51,32 @@ public class WeatherAppGui extends JFrame {
         searchTextField.setFont(new Font("Dialog", Font.PLAIN, 24));
 
         add(searchTextField);
+
+        System.out.println(searchTextField);
+        // add placeholder text to the search bar
+        addPlaceholder();
+
+        searchTextField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                if(searchTextField.getText().equals("Search for a location")  || searchTextField.getText().isEmpty()){
+                    removePlaceholder();
+                }
+            }
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                if(searchTextField.getText().equals("Search for a location")){
+                    System.out.println("oi");
+                    removePlaceholder();
+                }
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                // Plain text components do not fire these events
+            }
+        });
+
 
 
         // weather icon
@@ -152,6 +182,29 @@ public class WeatherAppGui extends JFrame {
         add(searchButton);
     }
 
+    private boolean isUpdating = false;
+    // placeholder for the search bar
+    private void addPlaceholder() {
+        SwingUtilities.invokeLater(() -> {
+            if (searchTextField == null) {
+                return;
+            }
+            if(searchTextField.getText().isEmpty()){
+                searchTextField.setText("Search for a location");
+                searchTextField.setForeground(Color.GRAY);
+            }
+        });
+    }
+
+    private void removePlaceholder() {
+        SwingUtilities.invokeLater(() -> {
+            if (!searchTextField.getText().equals("Search for a location")) {
+                searchTextField.setText("");
+                searchTextField.setForeground(Color.BLACK);
+            }
+        });
+    }
+
     // use this method to load images in the gui
     private ImageIcon loadImage(String sourcePath) {
         try {
@@ -165,3 +218,8 @@ public class WeatherAppGui extends JFrame {
         return null;
     }
 }
+
+    // creating a list of favorite locations
+
+
+
