@@ -58,20 +58,16 @@ public class WeatherAppGui extends JFrame {
 
         searchTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void insertUpdate(DocumentEvent e) {
-                if (isUpdating) {
-                    return;
-                }
-                removePlaceholder();
-            }
-
-            @Override
             public void removeUpdate(DocumentEvent e) {
-                if (isUpdating) {
-                    return;
+                if(searchTextField.getText().equals("Search for a location")  || searchTextField.getText().isEmpty()){
+                    removePlaceholder();
                 }
-                if (searchTextField.getText().isEmpty() && !searchTextField.getText().equals("Search for a location")) {
-                    addPlaceholder();
+            }
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                if(searchTextField.getText().equals("Search for a location")){
+                    System.out.println("oi");
+                    removePlaceholder();
                 }
             }
 
@@ -193,20 +189,18 @@ public class WeatherAppGui extends JFrame {
             if (searchTextField == null) {
                 return;
             }
-            isUpdating = true;
-            searchTextField.setText("Search for a location");
-            searchTextField.setForeground(Color.GRAY);
-            isUpdating = false;
+            if(searchTextField.getText().isEmpty()){
+                searchTextField.setText("Search for a location");
+                searchTextField.setForeground(Color.GRAY);
+            }
         });
     }
 
     private void removePlaceholder() {
         SwingUtilities.invokeLater(() -> {
-            if (searchTextField.getText().equals("Search for a location")) {
-                isUpdating = true;
+            if (!searchTextField.getText().equals("Search for a location")) {
                 searchTextField.setText("");
                 searchTextField.setForeground(Color.BLACK);
-                isUpdating = false;
             }
         });
     }
