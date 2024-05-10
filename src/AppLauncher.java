@@ -6,9 +6,11 @@ public class AppLauncher {
             @Override
             public void run() {
                 // display the gui
-//                new WeatherAppGui().setVisible(true);
+                new WeatherAppGui().setVisible(true);
 
-                System.out.println(WeatherApp.getLocationData("Lisbon"));
+//                System.out.println(WeatherApp.getLocationData("Lisbon"));
+
+//                System.out.println(WeatherApp.getCurrentTime());
             }
         });
     }
