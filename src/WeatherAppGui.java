@@ -59,7 +59,7 @@ public class WeatherAppGui extends JFrame {
         searchTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void removeUpdate(DocumentEvent e) {
-                if(searchTextField.getText().equals("Search for a location")  || searchTextField.getText().isEmpty()){
+                if(searchTextField.getText().equals("Search for a locatio")  || searchTextField.getText().isEmpty()){
                     removePlaceholder();
                 }
             }
