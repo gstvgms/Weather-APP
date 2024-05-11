@@ -30,3 +30,10 @@ Then open the project in the IntelliJ IDEA IDE.
 # 🤝 Contribution
 
 Contributions are always welcome! Feel free to open an issue or send a pull request.
+
+## 📬 Contact
+
+If you have any questions or would like to get in touch with me, feel free to send me an email or connect with me on LinkedIn:
+
+- [Email](mailto:gusta.trab.estudo@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/gustadev/)
