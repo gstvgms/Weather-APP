@@ -20,7 +20,7 @@ The open-source API open-meteo.com was consumed.
 
 To install and run this project, follow the steps below:
 
-1. First, you'll need to clone the project. To do this, open a terminal and type:
+First, you'll need to clone the project. To do this, open a terminal and type:
 
 ```bash
 git clone https://github.com/gstvgms/Weather-APP.git
