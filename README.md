@@ -27,6 +27,6 @@ git clone https://github.com/gstvgms/Weather-APP.git
 ```
 Then open the project in the IntelliJ IDEA IDE.
 
-#🤝 Contribution
+# 🤝 Contribution
 
 Contributions are always welcome! Feel free to open an issue or send a pull request.
