@@ -2,7 +2,7 @@
 
 ## 📝 Description
 
-This is a project inspired by the video “Weather App - Java Beginner Project Tutorial” from the [TapTap_196 channel](https://www.youtube.com/watch?v=8ZcEYv2ezWc&t). The project was built entirely in Java Swing, presenting a graphical user interface (GUI) for an application that queries city temperatures and details such as wind speed and humidity. 🌡
+This is a project inspired by the video “Weather App - Java Beginner Project Tutorial” from the [TapTap_196 channel](https://www.youtube.com/watch?v=8ZcEYv2ezWc&t). The project was built entirely in Java Swing, presenting a graphical user interface (GUI) for an application that queries city temperatures and details such as wind speed and humidity. 
 
 During the development of this project, I learned how to consume an API in Java, use a JSON Array and a JSON object, as well as applying some knowledge acquired during my ongoing degree, such as method creation. 
 
